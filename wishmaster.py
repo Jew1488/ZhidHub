@@ -1,2 +1,2 @@
-s = str(input())
+str = str(input())
 print("idi nyahui")
