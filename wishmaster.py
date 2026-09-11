@@ -1,1 +1,1 @@
-print("1010110")
+print("Ti pidar")
