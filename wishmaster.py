@@ -1,1 +1,2 @@
-print("Ti pidar")
+s = str(input())
+print("idi nyahui")
