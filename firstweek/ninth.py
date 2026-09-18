@@ -1,6 +1,6 @@
-f1 = open('input.txt', 'r')
-f2 = f1.readlines()
-f1.close()
+f10 = open('input.txt', 'r')
+f2 = f10.readlines()
+f10.close()
 ans = 1
 s = str('')
 for i in range(len(f2)):
