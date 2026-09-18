@@ -1,6 +1,6 @@
 s = (str(input())).split()
 maxim = int(s[0])
-for x in s:
-    if(s.count(x) > maxim):
-        maxim = int(x)
+for y in s:
+    if(s.count(y) > maxim):
+        maxim = int(y)
 print(maxim)
