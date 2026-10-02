@@ -15,7 +15,7 @@ start = min(k1, k2) - 2
 end = max(k1, k2) + 2	
 bestx = 0
 besty = 0
-sum = 10**18	
+sum = 9223372036854775807	
 for k in range(start, end + 1):
 	x = x0 + k * dx
 	y = y0 - k * dy
