@@ -28,4 +28,4 @@ for k in range(start, end + 1):
 		if x < bestx:
 			bestx = x
 			besty = y	
-print(best_x, best_y, d)
+print(bestx, besty, d)
