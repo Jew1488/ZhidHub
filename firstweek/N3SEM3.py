@@ -1,63 +1,33 @@
-def nod(a, b, d):
-
-    if(a%d + b%d == 0):
-
-        return d
-
-    else:
-
-        return nod(a,b,d-1)
-
-
-
-
-
-def dv(a,b,d,y,x, Y):
-
-    K = y + 1
-
-    if(abs((d - (y)*b)) < a):
-
-        if((d - (K)*b)%a == 0):
-
-            Y.append(K)
-
-            return dv(a,b,d,K,x,Y)
-
-    else:
-
-        if(x + y > x+1+1):
-
-            return dv(a,b,d,1,x+1,Y)
-
-        else:
-
-            return Y
-
-
-
-
-
-stroka = str(input()).split()
-a = int(stroka[0])
-b = int(stroka[1])
-
-if(a == 1 and b != 1):
-
-    print(1, 0, 1)
-
-elif(b == 1):
-
-    print(0, 1, 1)
-
-elif(a%b == 0):
-
-    print(0,a//b, b)
-
-else:
-
-    d = (nod(a,b, min(a,b)))
-
-    Y = dv(a,b,d, 1, 1, [1])
-
-    print((d - (max(Y))*b)//a ,max(Y),d)
+def nod(a, b):
+	if b == 0:
+		return a, 1, 0
+	d, x1, y1 = nod(b, a % b)
+	x = y1
+	y = x1 - (a // b) * y1
+	return d, x, y
+S = map(input().split())
+a = int(S[0])
+b = int(S[1])
+d, x0, y0 = nod(a, b)
+dx = b // d
+dy = a // d	
+k1 = -x0 // dx
+k2 = y0 // dy
+start = min(k1, k2) - 2
+end = max(k1, k2) + 2	
+bestx = 0
+besty = 0
+sum = 10**18	
+for k in range(start, end + 1):
+	x = x0 + k * dx
+	y = y0 - k * dy
+	s = abs(x) + abs(y)
+	if s < sum:
+		sum = s
+		bestx = x
+		besty = y
+	elif s == sum:
+		if x < bestx:
+			bestx = x
+			besty = y	
+print(best_x, best_y, d)
