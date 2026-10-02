@@ -5,7 +5,7 @@ def nod(a, b):
 	x = y1
 	y = x1 - (a // b) * y1
 	return d, x, y
-S = map(input().split())
+S = map(int, input().split())
 a = int(S[0])
 b = int(S[1])
 d, x0, y0 = nod(a, b)
